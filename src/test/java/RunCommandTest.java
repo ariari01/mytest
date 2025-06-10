@@ -3,20 +3,20 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 class RunCommandTest {
 
     @Test
-    void write_정상입력일때() {
+    void write_호출시_runSSDCommand가_호출되는지_확인() throws Exception {
         //arrange
-        RunCommand app = new RunCommand();
-        String input = "write 3 0xAAAABBBB";
-        String expected = "DONE";
+        RunCommand runCommand = spy(new RunCommand());
+        doNothing().when(runCommand).runSSDCommand(any(), any(), any());
 
         //act
-        String actual = app.write(input);
+        runCommand.write("write 3 0xAAAABBBB");
 
         //assert
-        assertThat(actual).isEqualTo("DONE");
+        verify(runCommand).runSSDCommand("W", "3", "0xAAAABBBB");
     }
 }
