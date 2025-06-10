@@ -36,14 +36,18 @@ public class RunCommand {
         System.out.print("Shell> ");
     }
 
-    void runSSDCommand(String... args) throws IOException, InterruptedException {
-        List<String> command = new ArrayList<>();
-        command.add("java");
-        command.add("-jar");
-        command.add("ssd.jar");
-        Collections.addAll(command, args);
+//    void runSSDCommand(String... args) throws IOException, InterruptedException {
+//        List<String> command = new ArrayList<>();
+//        command.add("java");
+//        command.add("-jar");
+//        command.add("ssd.jar");
+//        Collections.addAll(command, args);
+//
+//        ProcessBuilder pb = new ProcessBuilder(command);
+//        pb.start().waitFor();
+//    }
 
-        ProcessBuilder pb = new ProcessBuilder(command);
-        pb.start().waitFor();
+    void runSSDCommand(String... args) throws IOException {
+        throw new IOException("테스트용 IOException");
     }
 }
