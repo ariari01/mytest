@@ -12,6 +12,10 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    //AssertJ
+    testImplementation("org.assertj:assertj-core:3.27.3")
+    //Mockito
+    testImplementation("org.mockito:mockito-junit-jupiter:5.18.0")
 }
 
 tasks.test {
